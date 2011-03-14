@@ -10,13 +10,13 @@
 		var methods = {
 			init: function(options){
 				return this.each( function(){
-					if( options ){ $.extend( settings, options ); }
+					if(options){ $.extend( settings, options ); }
 					var scope = $(this);
 					$.each(settings.types, function(i, type){
-						scope.get(0).addEventListener(type, function(e){
-							if(settings.preventDefault){ e.preventDefault(); }
-							e.dataTransfer.dropEffect = (settings.dropEffect) ? 'all' : 'none';
-							if(callback){ callback.apply(scope, [e]); }
+						scope.get(0).addEventListener(type, function(evt){
+							if(settings.preventDefault){ evt.preventDefault(); }
+							evt.dataTransfer.dropEffect = (settings.dropEffect) ? 'all' : 'none';
+							if(callback){ callback.apply(scope, [evt]); }
 						}, false);
 					});
 				});
