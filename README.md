@@ -16,29 +16,23 @@ and preventing files from being dropped.</p>
 
 <p>A callback should almost immediately be added in order to notify the user or perform an action. We have to add the method as well.</p>
 <pre>
-    <code>
-    	$('div.dropzone').fileDragDrop('init', {}, function(){
-    		alert('file(s) dropped!');
-    	});
-    </code>
+    <code>$('div.dropzone').fileDragDrop('init', {}, function(){
+    	alert('file(s) dropped!');
+    });</code>
 </pre>
 
 <p>You can also segregate the events individually.</p>
 <pre>
-    <code>
-    	$('div.dropzone').fileDragDrop('init', {types: ['dragover']}, function(evt){
-    		alert('file(s) drug over!');
-    	});
-    </code>
+    <code>$('div.dropzone').fileDragDrop('init', {types: ['dragover']}, function(evt){
+    	alert('file(s) drug over!');
+    });</code>
 </pre>
 
 <p>The 'handleFiles' method can be used to attach the dropped file(s) object to a dom object via the jQuery data function.</p>
 <pre>
-    <code>
-    	$('div.dropzone').fileDragDrop('handleFiles', {attach: true, evt: e}, function(e){
-			alert('file(s) attached to the drop zone!');
-		});
-    </code>
+    <code>$('div.dropzone').fileDragDrop('handleFiles', {attach: true, evt: e}, function(e){
+    	alert('file(s) attached to the drop zone!');
+    });</code>
 </pre>
 
 <h3>Help?</h3>
