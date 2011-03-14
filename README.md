@@ -30,8 +30,10 @@ and preventing files from being dropped.</p>
 
 <p>The 'handleFiles' method can be used to attach the dropped file(s) object to a dom object via the jQuery data function.</p>
 <pre>
-    <code>$('div.dropzone').fileDragDrop('handleFiles', {attach: true, evt: e}, function(e){
-    	alert('file(s) attached to the drop zone!');
+    <code>$('div.dropzone').fileDragDrop('init', {types: ['drop']}, function(evt){
+    	$('div.dropzone').fileDragDrop('handleFiles', {attach: true, evt: evt}, function(evt){
+    		alert('file(s) attached to the drop zone!');
+    	});
     });</code>
 </pre>
 
